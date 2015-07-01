@@ -55,3 +55,27 @@
 #
 # TIP #3: Let the `rand` method return a number in a range starting at zero.
 # What can you do to the number `rand` returns to make it at least 1930?
+
+is_greeting = true
+is_talking = true
+while is_talking
+
+  if is_greeting
+    is_greeting = false
+    puts 'Nana: HI SWEETIE! GIVE NANA A KISS!'
+  end
+
+  you_said = gets.chomp
+
+  if you_said == 'BYE'
+    puts 'Nana: BYE SWEETIE!'
+    is_talking = false
+    break
+  end
+
+  if you_said == you_said.upcase && you_said.upcase != 'BYE'
+    puts 'Nana: NOT SINCE ' + (rand(1951 - 1930) + 1930).to_s + '!'
+  else
+    puts 'Nana: HUH?! SPEAK UP, SWEETIE!'
+  end
+end
