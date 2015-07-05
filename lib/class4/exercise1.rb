@@ -35,3 +35,23 @@
 #     Returns a new Array created by sorting `array`.
 #
 #     ['cat', 'bird'].sort  #=> ['bird', 'cat']
+
+word_wrray = []
+puts 'Type some words to be sorted alphabetically:'
+
+loop do
+  word = gets.chomp.downcase
+  if word == '' && word_wrray.length < 1
+    p 'there were no words in your list\n'
+    break
+  end
+
+  if word == '' && word_wrray.length > 1
+    p 'Sweet! Here they are in alphabetical order:'
+    sorted_array = word_wrray.sort
+    puts sorted_array
+    break
+  else
+    wordArray.push(word)
+  end
+end

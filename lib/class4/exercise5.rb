@@ -33,7 +33,28 @@
 
 # rubocop:disable MethodLength
 def modern_roman_numeral(num)
-  num # change me
+  numerals_array = [[1000, 'M'],
+                    [500, 'D'],
+                    [400, 'CD'],
+                    [100, 'C'],
+                    [90, 'XC'],
+                    [50, 'L'],
+                    [40, 'XL'],
+                    [10, 'X'],
+                    [9, 'IX'],
+                    [5, 'V'],
+                    [4, 'IV'],
+                    [1, 'I']]
+
+  numeral_array = []
+
+  numerals_array.each do |value|
+    if num / value[0] > 0
+      numeral_array << value[1] * (num / value[0])
+      num = num % value[0]
+    end
+  end
+  puts "#{numeral_array.join('')}"
 end
 
 input = ARGV[0].to_i

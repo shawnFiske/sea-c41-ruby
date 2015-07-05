@@ -33,7 +33,16 @@
 # TIP #2: Use `return` to preemptively exit the `ask` method.
 
 def ask(question)
-  question # change me
+  puts question
+  answer = gets.chomp
+  if answer == 'y' || answer == 'n'
+    reply = answer == 'y' ? 'We can be friends!' : 'Get out of my sight!'
+    puts reply.sub!(/\n/, '')
+    return
+  else
+    puts 'Try again'
+  end
+  puts ask(question)
 end
 
 puts ask('Do you like eating tacos? (y or n)')
