@@ -22,14 +22,16 @@
 require 'yaml'
 
 def database
-  '/replace/me'
+  long_path = File.absolute_path(__FILE__)
+  short_path = File.dirname(long_path)
+  short_path + '/database.yml'
 end
 
-def load
-  ['fix me']
+def load(filename)
+  YAML::load(File.read(filename))
 end
 
-records = load
+records = load database
 
 puts "Loaded #{records.size} records from #{database}"
 puts records

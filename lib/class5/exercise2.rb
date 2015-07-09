@@ -70,7 +70,9 @@
 #       '/Users/tim/sea-c21-ruby/lib/class5/'
 
 def database
-  '/change/me'
+  long_path = File.absolute_path(__FILE__)
+  short_path = File.dirname(long_path)
+  short_path + '/database.yml'
 end
 
 puts database

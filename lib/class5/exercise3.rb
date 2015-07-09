@@ -28,17 +28,25 @@
 require 'yaml'
 
 def records
-  ['replace me']
+  ['Incentivized methodologies',
+   'Seemless innovation',
+   'Corporate synergy',
+   'Scalable globalization',
+   'Monetized assets']
 end
 
 def database
-  '/replace/me'
+  long_path = File.absolute_path(__FILE__)
+  short_path = File.dirname(long_path)
+  short_path + '/database.yml'
 end
 
-def save
-  false # fix me
+def save(object)
+  File.open(database, 'w') do |file|
+    file.write(object.to_yaml)
+  end
 end
 
-save
+save records
 
 puts "Saved #{records.size} records to #{database}"
