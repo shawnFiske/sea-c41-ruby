@@ -32,7 +32,7 @@ def database
 end
 
 def load(filename)
-  YAML::load(File.read(filename))
+  YAML.load(File.read(filename))
 end
 
 def find(id)
