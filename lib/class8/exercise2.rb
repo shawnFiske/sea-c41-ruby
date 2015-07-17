@@ -15,9 +15,12 @@
 # TIP: Don't over think this one. The simpler the better.
 
 def follow_the_execution(method_param, &block)
-  method_param && block # fix me
+  yield
+  puts "method_param is #{method_param}"
+  puts 'Executing the block'
+  method_param && block 
 end
 
 follow_the_execution('dinner') do
-  # fix me
+  puts 'Executing the method'
 end
